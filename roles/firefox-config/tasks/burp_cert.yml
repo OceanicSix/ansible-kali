@@ -6,7 +6,7 @@
   become_method: sudo
 - name: "Download Burp CA certificate"
   command: 
-    cmd: bash -c 'timeout 15 $(java -Djava.awt.headless=true -jar /usr/share/burpsuite/burpsuite.jar)<<< "y" & sleep 5;curl http://localhost:8080/cert -o /tmp/cacert.der'
+    cmd: bash -c 'timeout 15 $(java -Djava.awt.headless=true -jar /usr/share/burpsuite/burpsuite.jar<<< "y") & sleep 5;curl http://localhost:8080/cert -o /tmp/cacert.der'
   when: burp_cert.stat.exists == False
 - name: "Copy Burp cert"
   copy:

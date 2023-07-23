@@ -1,4 +1,8 @@
 ---
+- name: "Check if burp file exist"
+  stat:
+    path: "{{ ansible_env.HOME }}/burp_pro/burpsuite_pro_v2023.6.jar"
+  register: bp_path
 - name: "create burp dir"
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/burp_pro"
@@ -14,3 +18,4 @@
     url: "https://seanyiyi.com:8080/burpsuite_pro_v2023.6.jar"
     dest: "{{ ansible_env.HOME }}/burp_pro/"
     mode: "0755"
+  when: not bp_path.stat.exists
