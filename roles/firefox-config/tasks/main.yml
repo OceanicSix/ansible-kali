@@ -1,3 +1,4 @@
 ---
 # tasks file for firefox-config
 - include: policies.yml
+- include: burp_cert.yml

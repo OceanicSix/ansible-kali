@@ -1,4 +1,8 @@
 ---
+- name: "Check if wordlist is copied" 
+  stat:
+    path: "{{ ansible_env.HOME }}/wordlist" 
+  register: wd_path
 - name: "Copy wordlist"
   copy:
     src: files/wordlist
@@ -8,7 +12,3 @@
     src: "{{ ansible_env.HOME }}/wordlist/rockyou.txt.tar.gz"
     dest: "{{ ansible_env.HOME }}/wordlist/"
     remote_src: yes 
-- name: "Remove rockyou tar file"
-  file:
-    path: "{{ ansible_env.HOME }}/wordlist/rockyou.txt.tar.gz"
-    state: absent

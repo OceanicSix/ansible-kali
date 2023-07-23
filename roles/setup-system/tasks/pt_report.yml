@@ -1,4 +1,8 @@
 ---
+- name: "Check if report is copied"
+  stat: 
+    path: "{{ ansible_env.HOME }}/pentest_report"
+  register: pt_path
 - name: "Copy pentest report"
   copy:
     src: files/pentest_report
@@ -6,3 +10,4 @@
 - name: "Copy pentest report target template"
   shell:
     cmd: cd "{{ ansible_env.HOME }}/pentest_report/template";cp -r target_template target1
+  when: pt_path.stat.exists ==False
