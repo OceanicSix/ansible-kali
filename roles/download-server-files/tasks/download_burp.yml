@@ -1,0 +1,16 @@
+---
+- name: "create burp dir"
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/burp_pro"
+    state: directory
+    mode: "0755"
+- name: "Download burp key file"
+  ansible.builtin.get_url:
+    url: "https://seanyiyi.com:8080/key.jar"
+    dest: "{{ ansible_env.HOME }}/burp_pro/"
+    mode: "0755"
+- name: "Download burp file"
+  ansible.builtin.get_url:
+    url: "https://seanyiyi.com:8080/burpsuite_pro_v2023.6.jar"
+    dest: "{{ ansible_env.HOME }}/burp_pro/"
+    mode: "0755"

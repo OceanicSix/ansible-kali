@@ -4,9 +4,10 @@
   connection: local
   roles:
     - role: "roles/install-from-apt"
-    - role: "roles/setup-package"
-    - role: "roles/download-git-files"
     - role: "roles/pip3-install"
+    - role: "roles/download-git-files"
+    - role: "roles/download-server-files"
+    - role: "roles/setup-package"
     - role: "roles/setup-system"
     - role: "roles/firefox-config"
     - role: gantsign.visual-studio-code #must use this role name as it is defined in requirements.yml

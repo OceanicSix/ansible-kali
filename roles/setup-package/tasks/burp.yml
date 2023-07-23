@@ -1,0 +1,10 @@
+---
+- name: "Copy burp config"
+  copy:
+    src: files/UserConfigPro.json
+    dest: "{{ ansible_env.HOME }}/.BurpSuite/"
+- name: "Add burp alias"
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: 'alias burp="/usr/lib/jvm/java-17-openjdk-amd64/bin/java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED --add-opens=java.base/jdk.internal.org.objectweb.asm.Opcodes=ALL-UNNAMED -javaagent:/home/kali/burp_pro/key.jar -noverify -jar /home/kali/burp_pro/burpsuite_pro_v2023.6.jar"'
+    create: yes
