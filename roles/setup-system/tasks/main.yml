@@ -4,13 +4,7 @@
   copy:
     src: files/avatar.jpg
     dest: "{{ ansible_env.HOME }}/Desktop/"
-- name: "Copy pentest report"
-  copy:
-    src: files/pentest_report
-    dest: "{{ ansible_env.HOME }}/"
-- name: "Copy pentest report target template"
-  shell:
-    cmd: cd "{{ ansible_env.HOME }}/pentest_report/template";cp -r target_template target1
 - include: terminal.yml
 - include: wordlist.yml
+- include: pt_report.yml
 
