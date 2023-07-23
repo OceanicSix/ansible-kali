@@ -1,0 +1,5 @@
+---
+- name: "Copy vim config"
+  copy:
+    src: files/vimrc
+    dest: "{{ ansible_env.HOME }}/.vimrc"

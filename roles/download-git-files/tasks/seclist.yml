@@ -1,0 +1,10 @@
+---
+- name: "Clone seclist"
+  git:
+    repo: https://github.com/danielmiessler/SecLists
+    dest: "{{ ansible_env.HOME }}/git/seclist/"
+- name: "Unzip rockyou.txt"
+  ansible.builtin.unarchive:
+    src: "{{ ansible_env.HOME }}/git/seclist/Passwords/Leaked-Databases/rockyou.txt.tar.gz"
+    dest: "{{ ansible_env.HOME }}/git/seclist/Passwords/Leaked-Databases/"
+    remote_src: yes 

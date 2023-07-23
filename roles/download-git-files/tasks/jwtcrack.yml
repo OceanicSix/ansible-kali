@@ -1,0 +1,9 @@
+---
+- name: "Download jwtcrack latest release"
+  git:
+    repo: "https://github.com/x1sec/gojwtcrack"
+    dest: "{{ ansible_env.HOME }}/git/jwtcrack/"
+- name: "Building jwtcrack"
+  shell: |
+    cd "{{ ansible_env.HOME }}/git/jwtcrack/"
+    go build -o jwtcrack main.go

@@ -1,0 +1,11 @@
+---
+- name: "Download eyewitness latest release"
+  git:
+    repo: "https://github.com/RedSiege/EyeWitness"
+    dest: "{{ ansible_env.HOME }}/git/eyewitness/"
+- name: "Building eyewitness"
+  shell: |
+    cd "{{ ansible_env.HOME }}/git/eyewitness/Python/setup/"
+    ./setup.sh
+  become: true
+  become_method: sudo

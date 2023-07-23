@@ -1,0 +1,9 @@
+---
+- name: "Download kerbrute latest release"
+  git:
+    repo: "https://github.com/ropnop/kerbrute"
+    dest: "{{ ansible_env.HOME }}/git/kerbrute/"
+- name: "Building kerbrute"
+  shell: |
+    cd "{{ ansible_env.HOME }}/git/kerbrute/"
+    go build

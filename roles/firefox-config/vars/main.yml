@@ -1,0 +1,5 @@
+---
+# vars file for firefox-config
+FirefoxPlugins:
+  - "foxyproxy-standard"
+  - "wappalyzer"

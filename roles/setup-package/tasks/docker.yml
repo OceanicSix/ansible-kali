@@ -1,0 +1,6 @@
+---
+- name: "add kali to docker group & Pull ubuntu image"
+  shell:
+    cmd: "usermod -aG docker kali;docker pull ubuntu"
+  become: true
+  become_method: sudo

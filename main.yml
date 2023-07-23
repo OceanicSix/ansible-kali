@@ -1,0 +1,22 @@
+---
+- name: "customizing kali"
+  hosts: localhost
+  connection: local
+  roles:
+    - role: "roles/install-from-apt"
+    - role: "roles/setup-package"
+    - role: "roles/download-git-files"
+    - role: "roles/pip3-install"
+    - role: "roles/setup-system"
+    - role: "roles/firefox-config"
+    - role: gantsign.visual-studio-code #must use this role name as it is defined in requirements.yml
+      users:
+         - username: "{{ ansible_user_id }}"
+           visual_studio_code_extensions:
+            - streetsidesoftware.code-spell-checker
+            - ms-python.python
+            - GitHub.copilot
+            - snyk-security.snyk-vulnerability-scanner
+            - mushan.vscode-paste-image
+            - yzhang.markdown-all-in-one
+            - redhat.vscode-xml

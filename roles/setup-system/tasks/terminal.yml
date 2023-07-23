@@ -1,0 +1,5 @@
+---
+- name: "Copy termianal config file"
+  copy:
+    src: files/qterminal.ini
+    dest: "{{ ansible_env.HOME }}/.config/qterminal.org/"

@@ -1,0 +1,8 @@
+---
+- name: "Copy pentest report"
+  copy:
+    src: files/pentest_report
+    dest: "{{ ansible_env.HOME }}/"
+- name: "Copy pentest report target template"
+  shell:
+    cmd: cd "{{ ansible_env.HOME }}/pentest_report/template";cp -r target_template target1

@@ -1,0 +1,6 @@
+---
+- name: "Setup mysql"
+  shell:
+    cmd: "{{ role_path }}/files/mysql.sh"
+  become: true
+  become_method: sudo

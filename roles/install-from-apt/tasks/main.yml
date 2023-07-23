@@ -1,0 +1,24 @@
+---
+# tasks file for install-from-apt
+- name: "install package from apt"
+  apt:
+    name:
+      - tmux
+      - apache2
+      - php
+      - php-mysql
+      - jq
+      - ascii
+      - gobuster
+      - ipython3
+      - mariadb-server
+      - docker.io
+      - docker-compose
+      - tree
+      - fcitx
+      - fcitx-googlepinyin
+      - golang-go
+      - htop
+    state: present
+  become: true
+  become_method: sudo

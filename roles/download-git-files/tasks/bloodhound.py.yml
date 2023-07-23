@@ -1,0 +1,5 @@
+---
+- name: "Clone bloodhound.py"
+  git:
+    repo: https://github.com/fox-it/BloodHound.py
+    dest: "{{ ansible_env.HOME }}/git/bloodhound.py"

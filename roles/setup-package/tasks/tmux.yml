@@ -1,0 +1,14 @@
+- name: "Copy tmux config"
+  copy:
+    src: "files/tmux.conf"
+    dest: "{{ ansible_env.HOME }}/.tmux.conf"
+- name: "Install tmux plugin manager"
+  git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+- name: "Install xsel"
+  apt:
+    name: xsel
+    state: present
+  become: true
+  become_method: sudo

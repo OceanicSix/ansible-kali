@@ -1,0 +1,11 @@
+---
+# tasks file for pip3-install
+- name: "Install python flask module"
+  pip:
+    name: flask
+- name: "Install python requests module"
+  pip:
+    name: requests
+- name: "Install python selenium module"
+  pip:
+    name: selenium

@@ -1,0 +1,12 @@
+---
+# tasks file for download-git-files
+- name: "Download files from github"
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/git"
+    state: directory
+    mode: '0755'
+- include: seclist.yml
+- include: bloodhound.py.yml
+- include: kerbrute.yml
+- include: eyewitness.yml
+- include: jwtcrack.yml
