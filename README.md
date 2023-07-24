@@ -8,7 +8,9 @@
 3. `ansible-playbook main.yml`
 
 ## To do
-- add burp folder to PT report
+- PT report
+  - add burp folder
+  - add DB table folder 
 - wordlist  
 - Common windows EXE
 
