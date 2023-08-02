@@ -10,7 +10,8 @@
 ## To do
 - PT report
   - add burp folder
-  - add DB table folder 
+  - add DB table folder
+  - Add API folder in Gather_info
 - wordlist  
 - Common windows EXE
 
