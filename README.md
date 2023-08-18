@@ -14,4 +14,5 @@
   - Add API folder in Gather_info
 - wordlist  
 - Common windows EXE
-
+- tools
+  - JDI-gui
