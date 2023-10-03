@@ -12,6 +12,7 @@
   - add burp folder
   - add DB table folder
   - Add API folder in Gather_info
+  - Add nmap folder
 - wordlist  
 - Common windows EXE
 - tools
